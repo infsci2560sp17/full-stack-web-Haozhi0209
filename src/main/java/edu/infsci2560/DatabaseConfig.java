@@ -29,6 +29,10 @@ public class DatabaseConfig {
 //    public DataSource dataSource() {
 //        return DataSourceBuilder.create().build();
 //    }
+<<<<<<< HEAD
+=======
+
+>>>>>>> aff9dc0d62e943a881dc9da58bffa03d3411eb02
     @Bean
     public BasicDataSource dataSource() throws URISyntaxException {
         URI dbUri = new URI(System.getenv("DATABASE_URL"));
