@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package edu.infsci2560;
 
 import java.net.URI;
@@ -22,17 +18,8 @@ import org.springframework.context.annotation.Profile;
 @Profile("!test")
 public class DatabaseConfig {
     private static final Logger log = LoggerFactory.getLogger(FullStackWebApplication.class);
-    
-//    @Bean
-//    @Primary
-//    @ConfigurationProperties(prefix = "spring.datasource")
-//    public DataSource dataSource() {
-//        return DataSourceBuilder.create().build();
-//    }
-<<<<<<< HEAD
-=======
 
->>>>>>> aff9dc0d62e943a881dc9da58bffa03d3411eb02
+
     @Bean
     public BasicDataSource dataSource() throws URISyntaxException {
         URI dbUri = new URI(System.getenv("DATABASE_URL"));
