@@ -1,6 +1,6 @@
-# TODO : Your Project Name
+# LawAdvice
 
-TODO : Please provide a detailed project description.
+
 
 ## Build status
 
