@@ -23,8 +23,6 @@ For all users, they can create their accounts to save data and give comments to 
 
 It looks like a Bulletin board system. The contents can be searched by catalog. I will use HTML5 and CSS3 to fulfill the main structure of the front end pages, and use javascript to achieve the dynamic functions. Data is transmitted by JSON, and back end will be written by JAVA. Ajax and jQuery will be used to improve the websites. And I will use frameworks like Bootstrap to make the developing easier and more clear. A suitable database will also be needed to satisfy the job of data storage. The whole development will be tested by a browser like Chrome. Standards and requests of Heroku and github will be met.
 
-
-
 ## Build status
 
 TODO : Modify to match your project specific Travis Build
