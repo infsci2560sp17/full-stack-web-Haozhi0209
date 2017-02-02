@@ -8,10 +8,15 @@ TODO : Modify to match your project specific Travis Build
 [![Build Status](https://travis-ci.org/infsci2560sp17/full-stack-web.svg?branch=master)](https://travis-ci.org/infsci2560sp17/full-stack-web)
 
 ## Web Site
+<<<<<<< HEAD
 
 http://guarded-peak-94065.herokuapp.com/
 
 http
+=======
+da's'd'sa'd'sa'da
+TODO : Please provide a link to your web site ![](https://...)
+>>>>>>> a9bb2df4e39c7ea3d14c077716ab75de6e01dd44
 
 ## Key Features
 
