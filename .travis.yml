@@ -5,4 +5,3 @@ jdk:
 ## Run Integration tests
 script: 
 - mvn verify
-
