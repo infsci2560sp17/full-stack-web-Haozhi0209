@@ -18,6 +18,10 @@ public enum Types {
     user_count,
     topic_count,
     comment_count,
+<<<<<<< HEAD
+=======
+    github,
+>>>>>>> eb3cd8de12d264aa361899f23e63fa117fa501db
     is_essence,
     activeAccount,
     disable,
@@ -25,6 +29,10 @@ public enum Types {
     setAdmin,
     recoveryAccount,
     allow_signup,
+<<<<<<< HEAD
+=======
+    forgot,
+>>>>>>> eb3cd8de12d264aa361899f23e63fa117fa501db
     sinks,
     topic_sinks,
     resend
