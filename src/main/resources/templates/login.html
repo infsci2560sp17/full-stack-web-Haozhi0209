@@ -1,19 +1,69 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Spring Security Example </title>
-    </head>
-    <body>        
-        <div data-th-if="${param.error}">
-            Invalid username and password.
+#include("./common/header.html", {active:"Login", title:"Login"})
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="col-md-6 app layout-fixed-header bg-white usersession box">
+                <div class="full-height">
+                    <div class=center-wrapper>
+                        <div class="center-content">
+                            <div class="row no-margin col-md-8">
+                                <form id="signin_form" method="post" class="form-layout" onsubmit="return doSignin()"/>
+                                    <p class="text-center mb30">Welcome to Lawadvice. Please Login.</p>
+                                    <div class="alert alert-danger hidden"><i class="fa fa-exclamation-triangle"
+                                                                              aria-hidden="true"></i> <label>Error Message.</label>
+                                    </div>
+                                    <div class=form-inputs>
+                                        <input type="text" class="form-control input-lg" name="login_name"
+                                               placeholder="Please enter your email or account" required="" value="${login_name}"/>
+                                        <input type="password" class="form-control input-lg" name="pass_word"
+                                               placeholder="Please enter your password" required=""/>
+                                        <label class="cb-checkbox cb-md">
+                                            <span class="cb-inner"><i><input type="checkbox" name="rememberme"
+                                                                             checked="checked"/></i></span>Remember me
+                                        </label>
+                                    </div>
+                                    <button class="btn btn-success btn-block btn-lg mb15"
+                                            data-style="zoom-out" type="submit">
+                                        <span class="ladda-label">Login</span>
+                                    </button>
+                                    <p>
+                                        <a href="${base_url('/signup')}">Sign up</a> ·
+                                        <a href="${base_url('/forgot')}">Forgot your password?</a>
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div data-th-if="${param.logout}">
-            You have been logged out.
-        </div>
-        <form data-th-action="@{/login}" method="post">
-            <div><label> User Name: <input type="text" name="username"/> </label></div>
-            <div><label> Password: <input type="password" name="password"/> </label></div>
-            <div><input type="submit" value="Sign In"/></div>
-        </form>
-    </body>
+        #include("./common/sidebar.html")
+    </div>
+</div>
+#include("./common/footer.html")
+<script type="text/javascript">
+    var jc = new $.jc();
+    function doSignin() {
+        jc.post({
+            url: '/signin',
+            data: $('#signin_form').serialize(),
+            success: function (result) {
+                if (result && result.success) {
+                    var payload = result.payload;
+                    if(payload && payload != ''){
+                        window.location.href = payload;
+                    } else {
+                        window.location.href = '/';
+                    }
+                } else {
+                    jc.showError('#signin_form .alert-danger', result.msg || 'Login Failed.');
+                }
+            }
+        });
+        return false;
+    }
+
+</script>
+</body>
 </html>

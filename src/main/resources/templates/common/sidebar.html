@@ -1,0 +1,78 @@
+<div class="col-md-3">
+            
+	#if(null != login_user)
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">Personal Information</h3>
+		</div>
+		<div class="panel-body">
+			<div class="row">
+				<div class="profile-sidebar">
+					<div class="profile-sidebar-item profile-avatar">
+						<a href="${base_url('/member/' + login_user.user_name)}">
+							<img src="${cdn_url}/${login_user.avatar}" alt="${login_user.user_name}" class="avatar avatar-lg img-circle"/>
+						</a>
+					</div>
+					<div class="profile-sidebar-item profile-info">
+						<span class="h5 bold">${login_user.user_name}</span>
+						<p>${login_user.jobs ?! ''}</p>
+						<div class="w150 center-block mt10">
+							<a class="btn btn-success btn-outline btn-block" href="${base_url('/topic/add')}">
+								<span>Release a new topic</span>
+							</a>
+						</div>
+					</div>
+					<hr>
+					<ul class="profile-sidebar-item profile-numbers-count">
+						<li><a href="${base_url('/my/topics')}"><span class="bold">${login_user.my_topics ?! 0}</span>Topic Selection</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="panel-footer box">
+			<a href="${base_url('/notices')}"><span id="notice_count">0</span> unread.</a>
+		</div>
+	</div>
+	#end
+	#if(null != hot_topics && hot_topics.size() > 0)
+	<div class="panel panel-default">
+		 <div class="panel-heading">
+		     <h3 class="panel-title">Hot topics</h3>
+		 </div>
+           <div class="panel-body">
+           	<ul class="list-unstyled hot-topics">
+           		#for(topic : hot_topics)
+           		<li>
+					<a href="${base_url('/member/') + topic.login_name}">
+						<img class="img-circle" src="${cdn_url}/${topic.avatar}" width="25" height="25" />
+					</a>
+					<a href="${base_url('/topic/') + topic.tid}">${topic.title}</a>
+				</li>
+           		#end
+				</ul>
+           </div>
+       </div>
+	#end
+	#if(null != sys_info)
+	<div class="panel panel-default">
+	    <div class="panel-heading">
+	        <h3 class="panel-title">BBS Status</h3>
+	    </div>
+	    <div class="panel-body">
+	        <p>Members：${sys_info.user_count}</p>
+	        <p>Topics　：${sys_info.topic_count}</p>
+	        <p>Comments　：${sys_info.comment_count}</p>
+	    </div>
+	</div>  
+	#end
+</div>
+<script type="text/javascript">
+function check_notice(){
+	$.get("${base_url('/check_notice')}",{},function(response){
+		if(response){
+			$('.panel-footer #notice_count').text(response);
+		}
+	});
+}
+check_notice();
+</script>

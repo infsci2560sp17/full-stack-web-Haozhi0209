@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lawadvice</title>
+    <link type="text/css" rel="stylesheet" href="/assets/styles/main.min.css?ver=${version}" />
+    <link type="text/css" rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="//cdn.bootcss.com/limonte-sweetalert2/6.4.1/sweetalert2.min.css" rel="stylesheet">
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+	<meta name="description" content="${sys_info.site_description ?! ''}" />
+    <meta name="keywords" content="${sys_info.site_keywords ?! ''}" />
+    <meta name="csrf-token" content="${csrf_token}"/>
+    <meta name="google-site-verification" content="-fVfWY81Voot4r0-0Tt0uKva8SxwDyz3yXWIaX1HgEg" />
+    <meta name="baidu-site-verification" content="b9WlfBhzs1" />
+    <script type="text/javascript">
+        var BASE = '${base}';
+        var CDN_URL = '${cdn}';
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-default box" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="${base_url('')}">Lawadvice</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">>
+                    <li class="#if(active=='essence')active#end"><a href="${base_url('/essence')}">Essence</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                <li><a href="${base_url('')}">Homepage</a></li>
+                    <li class="#if(active=='signup')active#end"><a href="${base_url('/signup')}">SignUP</a></li>
+                    <li class="#if(active=='signin')active#end"><a href="${base_url('/signin')}">Login</a></li>
+                </ul>
+                <form class="navbar-form navbar-right" onsubmit="return dispatch();" role="search" method="get" target="_blank">
+                	<div class="form-group input-sm">
+                        <input type="text" class="form-control input-sm" placeholder="搜索..." name="q" id="q"/>
+                	</div>
+                </form>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+    </nav>
