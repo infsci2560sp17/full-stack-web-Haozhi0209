@@ -24,95 +24,87 @@
 
 ## Build status
 
-TODO : Modify to match your project specific Travis Build
 [![Build Status](https://travis-ci.org/infsci2560sp17/full-stack-web.svg?branch=master)](https://travis-ci.org/infsci2560sp17/full-stack-web)
 
 ## Web Site
 
 https://github.com/Haozhi0209/full-stack-web-Haozhi0209
 
-https://guarded-peak-94065.herokuapp.com/
+https://ancient-caverns-23519.herokuapp.com/
 
 
 ## Key Features
 
-TODO : Please list key features of your project.
-
-* Key Feature 1
-* Key Feature 2
-* Key Feature N
+* Sign in to publish topics freely
+* Follow topics to give comments
+* Try to be the hottest person!
 
 ## Project Details
 
-### Landing Page
+MVC frameworks are used to seperate the project into diffrent layers. Service and implentation funcitons are used to complete functions. Controllers are used to transfer requests and data. HTML/CSS and jQuery are used in views. Data is stored into different tables in MySQL. AJAX and ASP.NET are also used to make dynamic response to users' requests.
 
-TODO : please provide a description of your landing page inluding a screen shot ![](https://.../image.JPG)
-
-### User Input Form
-
-TODO : please provide a description of at least 1 user input form including a screen shot ![](https://.../image.jpg)
 
 ## API
 
-TODO : please provide a description of at least 1 API including a sample of request data and response data in both XML and JSON format.
+I used MySQL to store data, and tables are called like this.
 
-### API Method 1
+@Table(name = "t_topic", pk = "tid")
+public class Topic implements Serializable {
 
-    POST photos/:id/tags
+    private static final long serialVersionUID = 1L;
 
-#### Parameters
+    private Integer tid;
 
-- **id** _(required)_ — The Photo ID to add tags for.
-- **tags** _(required)_ — Comma separated tags.
+    private Integer uid;
+
+    private Integer nid;
+
+    private String title;
+
+    private String content;
+
+    private Integer is_top;
+
+    private Integer is_essence;
+
+    private Double weight;
+
+    private Integer create_time;
+
+    private Integer update_time;
+
+    private Integer status;
+
+}
+
+And different GET/POST functions are achieved in different controllers.
+
+   @Route(value = "/topic/add", method = HttpMethod.GET)
+    public ModelAndView show_add_topic(Request request, Response response) {
+        LoginUser user = SessionKit.getLoginUser();
+        if (null == user) {
+            response.go("/");
+            return null;
+        }
+        // this.putData(request);
+        Long pid = request.queryAsLong("pid");
+        request.attribute("pid", pid);
+        return this.getView("topic_add");
+    }
+
 
 #### Response
 
-A JSON or XMLobject containing the PhotoID and list of tags accepted.
+Different JSON data will be returned by service functions called.
 
-#### Errors
-
-All known errors cause the resource to return HTTP error code header together with a JSON array containing at least 'status' and 'error' keys describing the source of error.
-
-- **404 Not Found** — The photo was not found.
-
-#### Example
-
-##### Request
-
-    POST /v1/photos/123456/tags
-
-##### Body
-
-    tags=cute,puppy
-
-
-##### JSON Response
-
-```json
-{
-    "photoId": 123456,
-    "tags": ["cute", "puppy"]
-}
-```
-
-##### XML Response
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<PhotoTags>
-    <photoId>123456</PhotoId>
-        <tags>
-            <tag>cute</tag>
-            <tag>puppy</tag>
-        </tags>
-</PhotoTags>
-```
 
 ## Technologies Used
 
-TODO : List all technologies used in your project
 
 - [Spring Boot](https://projects.spring.io/spring-boot/) - Takes an opinionated view of building production-ready Spring applications.
 - [Thymleaf](http://www.thymeleaf.org/) - Thymeleaf is a modern server-side Java template engine for both web and standalone environments.
 - [Maven](https://maven.apache.org/) - Apache Maven is a software project management and comprehension tool.
-
+- [JDBC] (http://www.oracle.com/technetwork/java/javase/jdbc/index.html) - Java Database Connectivity (JDBC) is an application programming interface (API) for the programming language Java, which defines how a client may access a database.
+- [jQuery](https://jquery.com/) - JQuery is a fast, small, and feature-rich JavaScript library.
+- [MySQL](https://www.mysql.com/) - MySQL is an open-source relational database management system (RDBMS) created by the Swedish company MySQL AB. 
+-[ASP.NET] (https://www.asp.net/) - ASP.NET is an open-source server-side web application framework designed for web development to produce dynamic web pages.
