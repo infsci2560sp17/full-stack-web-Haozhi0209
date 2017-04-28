@@ -1,0 +1,61 @@
+#include("./common/header.html", {active:"signup", title:"Signup"})
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+			<div class="app layout-fixed-header bg-white usersession box">
+				<div class="full-height">
+					<div class=center-wrapper>
+						<div class=center-content>
+							#if(null == info)
+							<div class="row no-margin col-md-8">
+								<form role="form" action="${base_url('/signup')}" class="form-layout" method="post">
+									<p class="text-center mb30">Create a new account.</p>
+									#if(null != error)
+									<div class="alert alert-danger">${error}</div>
+									#end
+									<div class=form-inputs>
+										<div class="input-group mb15">
+											<span class="input-group-addon">Username</span>
+											<input type="text" name="login_name" class="form-control input-lg" 
+											placeholder="Please use a-z or 0-9" required="required" value="${login_name}"/>
+										</div>
+										<div class="input-group mb15">
+											<span class="input-group-addon">Email Address</span>
+											<input type="email" name="email" class="form-control input-lg" 
+											placeholder="Please use a valid email address." required="required" value="${email}"/>
+										</div>
+										<div class="input-group mb15">
+											<span class="input-group-addon">Password</span>
+											<input type="password" name="pass_word" class="form-control input-lg" placeholder="Please enter a 6-20 bit password."  required="required" />
+										</div>
+										
+										<div class="input-group mb15">
+											<span class="input-group-addon">Verification code&nbsp;</span>
+											<div class="row">
+												<div class="col-sm-7">
+													<input type="text" style="height: 45px;" class="form-control" name="auth_code" placeholder="Please enter the verification code." maxlength="6" required="required"/>
+												</div>
+												<div class="col-sm-5">
+													<img id="captcha" style="cursor: pointer;" src="${base_url('/captcha')}" alt="Click to change..." title="Click to change..." width="150" height="45" onclick="change_captcha()"/>
+												</div>
+											</div>
+										</div>
+									</div>
+									<button class="btn btn-success btn-block btn-lg mb15" type="submit">Create a new account</button>
+									</p>
+								</form>
+							</div>
+							#else
+							<div class="alert alert-success mt20 mr20 ml20">${info}</div>
+							#end
+						</div>
+					</div>
+				</div>
+			</div>			        	
+        </div>
+        #include("./common/sidebar.html")
+    </div>
+</div>
+#include("./common/footer.html")
+</body>
+</html>
