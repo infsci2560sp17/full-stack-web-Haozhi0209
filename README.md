@@ -32,6 +32,10 @@ https://github.com/Haozhi0209/full-stack-web-Haozhi0209
 
 https://ancient-caverns-23519.herokuapp.com/
 
+## Changelog 
+
+- [Changelog](https://github.com/infsci2560sp17/full-stack-web-Haozhi0209/blob/master/CHANGELOG.md)
+
 
 ## Key Features
 
