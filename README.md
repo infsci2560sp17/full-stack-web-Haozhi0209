@@ -113,7 +113,7 @@ Different JSON data will be returned by service functions called.
 - [Spring Boot](https://projects.spring.io/spring-boot/) - Takes an opinionated view of building production-ready Spring applications.
 - [Thymleaf](http://www.thymeleaf.org/) - Thymeleaf is a modern server-side Java template engine for both web and standalone environments.
 - [Maven](https://maven.apache.org/) - Apache Maven is a software project management and comprehension tool.
-- [JDBC] (http://www.oracle.com/technetwork/java/javase/jdbc/index.html) - Java Database Connectivity (JDBC) is an application programming interface (API) for the programming language Java, which defines how a client may access a database.
+- [JDBC](http://www.oracle.com/technetwork/java/javase/jdbc/index.html) - Java Database Connectivity (JDBC) is an application programming interface (API) for the programming language Java, which defines how a client may access a database.
 - [jQuery](https://jquery.com/) - JQuery is a fast, small, and feature-rich JavaScript library.
 - [MySQL](https://www.mysql.com/) - MySQL is an open-source relational database management system (RDBMS) created by the Swedish company MySQL AB. 
 -[ASP.NET] (https://www.asp.net/) - ASP.NET is an open-source server-side web application framework designed for web development to produce dynamic web pages.
