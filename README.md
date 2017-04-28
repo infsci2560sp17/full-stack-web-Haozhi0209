@@ -116,5 +116,4 @@ Different JSON data will be returned by service functions called.
 - [JDBC](http://www.oracle.com/technetwork/java/javase/jdbc/index.html) - Java Database Connectivity (JDBC) is an application programming interface (API) for the programming language Java, which defines how a client may access a database.
 - [jQuery](https://jquery.com/) - JQuery is a fast, small, and feature-rich JavaScript library.
 - [MySQL](https://www.mysql.com/) - MySQL is an open-source relational database management system (RDBMS) created by the Swedish company MySQL AB.
-
--[ASP.NET](https://www.asp.net/)  ASP.NET is an open-source server-side web application framework designed for web development to produce dynamic web pages.
+- [ASP.NET](https://www.asp.net/)  ASP.NET is an open-source server-side web application framework designed for web development to produce dynamic web pages.
