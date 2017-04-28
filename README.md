@@ -28,7 +28,8 @@
 
 ## Web Site
 
-https://github.com/Haozhi0209/full-stack-web-Haozhi0209
+
+https://github.com/infsci2560sp17/full-stack-web-Haozhi0209
 
 https://ancient-caverns-23519.herokuapp.com/
 
